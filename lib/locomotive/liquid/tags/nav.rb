@@ -82,7 +82,7 @@ module Locomotive
 
         # Returns a list element, a link to the page and its children
         def render_entry_link(page, css, depth)
-          selected = @page.fullpath =~ /^#{page.fullpath}/ ? " #{@options[:active_class]}" : ''
+          selected = @page.fullpath =~ /^#{page.fullpath}(\.|\/|\?|$)/ ? " #{@options[:active_class]}" : ''
 
           icon = @options[:icon] ? '<span></span>' : ''
 
